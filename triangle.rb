@@ -15,6 +15,10 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  raise TriangleError if [a, b, c].any?{ |value| value <= 0 }
+
+  raise TriangleError if (a+b)<=c || (b+c)<=a || (a+c)<=b
+
   if (a==b && b==c)
     return :equilateral
   elsif (a==b || a==c || b==c)
